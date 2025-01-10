@@ -11,7 +11,7 @@ export default function Blog1() {
     message: "",
   });
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setComment((prev) => ({
       ...prev,
@@ -19,7 +19,7 @@ export default function Blog1() {
     }));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent default form submission behavior
     console.log(comment);
     // Handle comment submission here (e.g., send to a server or save locally)
